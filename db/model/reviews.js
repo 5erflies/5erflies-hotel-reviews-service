@@ -1,20 +1,22 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const faker = require('faker');
 
-mongoose.connect('mongodb://localhost/test');
+const Schema = mongoose.Schema;
+
+mongoose.connect('mongodb://localhost/reviews');
 
 // mongoose.Promise = global.Promise;
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+db.once('open', () => {
   console.log('connected to db');
 });
 
-//schema for reviews
+// schema for reviews
 
-var reviewSchema = new mongoose.Schema({
+const reviewSchema = new mongoose.Schema({
+  propertyId: Number,
+  reviewId: Number,
   propertyName: String,
   username: String,
   avatar: String,
@@ -26,21 +28,21 @@ var reviewSchema = new mongoose.Schema({
     accuracy: Number,
     checkIn: Number,
     location: Number,
-    value: Number
+    value: Number,
   },
   response: {
     hostname: String,
     avatar: String,
     response: String,
-    dayCommented: Date
-  }
+    dayCommented: Date,
+  },
 });
 
-var Review = mongoose.model('Review', reviewSchema);
+const Review = mongoose.model('Review', reviewSchema);
 
 module.exports = Review;
 
-//probably want to use saveData for when we get to backend side
+// probably want to use saveData for when we get to backend side
 
 // var saveData = (data) => {
 //   // console.log('getting to saveData');
