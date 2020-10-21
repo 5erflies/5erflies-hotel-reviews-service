@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
-
-mongoose.connect('mongodb://localhost/reviews');
+// for using EC2
+mongoose.connect('mongodb://database/reviews', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // mongoose.Promise = global.Promise;
+
+// var mongoUrl = 'mongodb://database/reviews';
+
+// mongoose.connect(mongoUrl, { server: { reconnectTries: Number.MAX_VALUE } });
 
 const Review = require('./model/reviews.js');
 
