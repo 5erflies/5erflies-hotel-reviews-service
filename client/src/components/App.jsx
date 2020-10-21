@@ -14,6 +14,7 @@ const AppStyle = styled.div`
   // height: 1000px;
   overflow: hidden;
   max-width: 1000px;
+  margin: 0 300px 0 300px;
 `;
 
 // what a bad name
