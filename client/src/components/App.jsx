@@ -6,7 +6,7 @@ import Ratings from './Ratings.jsx';
 import ReviewList from './ReviewList.jsx';
 import Modal from './Modal.jsx';
 
-const query = window.location.search;
+const query = window.location.search || "?propertyId=0";
 const ENDPOINT = `/reviews/${query}`;
 
 const AppStyle = styled.div`
@@ -115,6 +115,7 @@ class App extends React.Component {
       }
       const lastDigit = newNum.toString().split('').pop();
       if (lastDigit >= 5) {
+        console.log(lastDigit, 'Last Digit')
         newNum = Math.ceil(newNum) / 10;
       } else {
         newNum = Math.floor(newNum) / 10;
