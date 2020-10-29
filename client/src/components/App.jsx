@@ -1,50 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
 import TotalRating from './TotalRating.jsx';
 import Ratings from './Ratings.jsx';
 import ReviewList from './ReviewList.jsx';
 import Modal from './Modal.jsx';
+import { AppStyle, ModalOpenButton } from './style.jsx'
 
 const query = window.location.search || "?propertyId=0";
 const ENDPOINT = `/reviews/${query}`;
-
-const AppStyle = styled.div`
-  // overflow: ${props => props.show ? 'hidden' : 'auto'};
-  // height: 1000px;
-  overflow: hidden;
-  max-width: 1000px;
-`;
-
-// what a bad name
-const ModalLocation = styled.div`
-  // display: ${props => props.show ? 'none' : 'block'};
-  // display: none;
-`;
-
-const ModalOpenButton = styled.button`
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  width: auto;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-left: 23px;
-  padding-right: 23px;
-  border-radius: 8px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(34, 34, 34);
-  background: rgb(255, 255, 255);
-  &:hover {
-    cursor: pointer;
-    background-color: #d9d9d9;
-  };
-`;
 
 class App extends React.Component {
   constructor(props) {
