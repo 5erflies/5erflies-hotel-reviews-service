@@ -1,43 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import { ReviewsRow, ReviewColumn, Review } from './style.jsx';
 
 import ReviewItem from './ReviewItem.jsx';
 
-const ReviewsRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
 
-const ReviewColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const Review0 = styled.div`
-  flex: 1;
-`;
-
-const Review1 = styled.div`
-  flex: 1;
-`;
-
-const Review2 = styled.div`
-  flex: 1;
-`;
-
-const Review3 = styled.div`
-  flex: 1;
-`;
-
-const Review4 = styled.div`
-  flex: 1;
-`;
-
-const Review5 = styled.div`
-  flex: 1;
-`;
 
 class ReviewList extends React.Component {
   constructor(props) {
@@ -85,28 +51,28 @@ class ReviewList extends React.Component {
         return(
           <ReviewColumn>
             <ReviewsRow>
-              <Review0>
+              <Review>
                 <ReviewItem review={recentSixReviews[0]} />
-              </Review0>
-              <Review1>
+              </Review>
+              <Review>
                 <ReviewItem review={recentSixReviews[1]} />
-              </Review1>
+              </Review>
             </ReviewsRow>
             <ReviewsRow>
-              <Review2>
+              <Review>
                 <ReviewItem review={recentSixReviews[2]} />
-              </Review2>
-              <Review3>
+              </Review>
+              <Review>
                 <ReviewItem review={recentSixReviews[3]} />
-              </Review3>
+              </Review>
             </ReviewsRow>
             <ReviewsRow>
-              <Review4>
+              <Review>
                 <ReviewItem review={recentSixReviews[4]} />
-              </Review4>
-              <Review5>
+              </Review>
+              <Review>
                 <ReviewItem review={recentSixReviews[5]} />
-              </Review5>
+              </Review>
             </ReviewsRow>
           </ReviewColumn>
           // <ReviewsRow>
