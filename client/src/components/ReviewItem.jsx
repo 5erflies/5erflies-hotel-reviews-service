@@ -7,7 +7,6 @@ class ReviewItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // maybe change the name of these becuase they are misleading
       longReview: false,
       shortReview: '',
       longResponse: false,
@@ -42,7 +41,7 @@ class ReviewItem extends React.Component {
   }
 
   goToUserPage() {
-    alert("This button doesn't actually do anything because I didn't make a user page because that wasn't part of my role!");
+    alert("This button is not functional yet, and will be implemented in a future update");
   }
 
   render() {
