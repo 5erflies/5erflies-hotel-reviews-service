@@ -7,7 +7,6 @@ class ReviewItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // maybe change the name of these becuase they are misleading
       longReview: false,
       shortReview: '',
       longResponse: false,
